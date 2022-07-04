@@ -1,26 +1,9 @@
-const searchEl = document.querySelector('.search');
-const searchInputEl = document.querySelector('input');
 const badgeEl = document.querySelector('header .badges');
 const fadeEls = document.querySelectorAll('.visual .fade-in');
 const promotionEl = document.querySelector('section.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
 const spyEls = document.querySelectorAll('section.scroll-spy');
-const thisYear = document.querySelector('.this-year');
 const toTopEl = document.querySelector('#to-top');
-
-searchEl.addEventListener('click', function(){
-    searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', function(){
-    searchEl.classList.add('focused');
-    searchInputEl.setAttribute('placeholder', 'search');
-});
-
-searchInputEl.addEventListener('blur', function(){
-    searchEl.classList.remove('focused');
-    searchInputEl.setAttribute('placeholder', '');
-});
 
 window.addEventListener('scroll', function(){
     if(window.scrollY > 500){
@@ -130,8 +113,6 @@ new Swiper('.awards .swiper', {
         nextEl: '.awards .swiper-button-next'
     }
 });
-
-thisYear.textContent = new Date().getFullYear();
 
 toTopEl.addEventListener('click', function(){
     gsap.to(window, 0.6, {
